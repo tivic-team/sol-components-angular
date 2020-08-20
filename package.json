@@ -1,0 +1,24 @@
+{
+  "name": "sol-components-angular",
+  "version": "0.1.0",
+  "description": "Pacote responsavel pelo desenho de componentes dos projetos da TIVIC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tivic-dev/sol-components-angular.git"
+  },
+  "author": "TIVIC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tivic-dev/sol-components-angular/issues"
+  },
+  "homepage": "https://github.com/tivic-dev/sol-components-angular#readme",
+  "dependencies": {
+    "@angular/core": "^10.0.0",
+    "@angular/forms": "^10.0.0",
+    "rxjs": "^6.5.5"
+  }
+}
