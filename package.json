@@ -1,10 +1,14 @@
 {
   "name": "sol-components-angular",
-  "version": "0.1.0",
+  "version": "0.1.14",
   "description": "Pacote responsavel pelo desenho de componentes dos projetos da TIVIC",
-  "main": "index.js",
+  "main": "src/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --declaration"
   },
   "repository": {
     "type": "git",
@@ -17,8 +21,11 @@
   },
   "homepage": "https://github.com/tivic-dev/sol-components-angular#readme",
   "dependencies": {
-    "@angular/core": "^10.0.0",
-    "@angular/forms": "^10.0.0",
-    "rxjs": "^6.5.5"
+    "@angular/cdk": "^8.2.3",
+    "@angular/core": "~8.2.9",
+    "@angular/forms": "~8.2.9",
+    "@angular/material": "^8.2.3",
+    "rxjs": "^6.5.5",
+    "sol-tools-ts": "^0.1.0"
   }
 }

@@ -1,0 +1,1 @@
+export { GridExtendedComponent } from './form/elements/grid-extended/grid-extended.component'
