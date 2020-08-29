@@ -149,6 +149,15 @@ import { DialogFactory } from "sol-tools-ts/dist/dialog/dialog-factory";
             margin: 0px 10px 0px;
             font-size: 11px;
         }
+
+        .mat-header-cell{
+            font-size: 10px;
+        }
+
+        .mat-cell{
+            font-size: 12px;
+        }
+
         .add-fab-button {
             position: absolute;
             right: 0px;
@@ -180,37 +189,47 @@ import { DialogFactory } from "sol-tools-ts/dist/dialog/dialog-factory";
             overflow-x: hidden !important;
             overflow-y: auto;
             max-height: 35vh;
-            .mat-header-row {
+        }
+
+        .mat-header-row {
+            padding: 0;
+            border: none;
+            cursor: pointer !important;
+        }
+        .mat-header-row .mat-row .mat-header-cell .mat-cell {
+            display: table-cell;
+            height: 48px;
+            max-height: 48px;
+            vertical-align: middle;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            cursor: pointer !important;
+        }
+        .mat-row {
+            z-index: 0;
+            &:hover {
                 padding: 0;
                 border: none;
                 cursor: pointer !important;
+                background: #eee;
+                z-index: 2;
             }
-            .mat-header-row .mat-row .mat-header-cell .mat-cell {
-                display: table-cell;
-                height: 48px;
-                max-height: 48px;
-                vertical-align: middle;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-                cursor: pointer !important;
-            }
-            .mat-row {
-                z-index: 0;
-                &:hover {
-                    padding: 0;
-                    border: none;
-                    cursor: pointer !important;
-                    background: #eee;
-                    z-index: 2;
-                }
-                /* &.mat-selected {
-                    background: #aaa !important;
-                } */
-            }
-    
-            .mat-form-field-infix{
-                width: auto;
-            }
+            /* &.mat-selected {
+                background: #aaa !important;
+            } */
         }
+
+        .mat-row:hover {
+            padding: 0;
+            border: none;
+            cursor: pointer !important;
+            background: #eee;
+            z-index: 2;
+        }
+
+        .mat-form-field-infix{
+            width: auto;
+        }
+
         .action-column{
             max-width: 50px;
         }
