@@ -1,0 +1,13 @@
+<div>
+    <mat-form-field floatLabel='always' class='customComponent'>
+        <mat-label>Data</mat-label>
+        <input matInput [matDatepicker]="datePicker" class='customDateTime' [formControl]='date' (ngModelChange)='updateDate()'>
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+        <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field floatLabel='float' class='customComponent'>
+        <mat-label>Hora</mat-label>
+        <input matInput type='time' step='1' class='customDateTime' [value]='timeValue' [(ngModel)]='timeValue' (change)='updateTime()'>
+    </mat-form-field>
+</div>
+  
