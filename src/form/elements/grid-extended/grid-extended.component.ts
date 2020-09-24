@@ -263,8 +263,6 @@ import { DialogFactory } from "sol-tools-ts/dist/dialog/dialog-factory";
     
     `]
 })
-
-@Injectable()
 export class GridExtendedComponent {
     public tableDataSource: MatTableDataSource<any> = new MatTableDataSource<any>([]);
     public selection:SelectionModel<any> = new SelectionModel<any>(false);
