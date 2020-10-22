@@ -272,7 +272,7 @@ export class GridExtendedComponent {
     regOldRegisterSelected = {};
 
     trackByStrategy: any = 'id';
-    pageIndex: number = 0;
+    @Input() pageIndex: number = 0;
 
     itemsPerPageLabel: 'Registros por página:';
     nextPageLabel: 'Próxima Página';
@@ -339,6 +339,7 @@ export class GridExtendedComponent {
         this.options['dataSource'] = this.dataSource || this.options.dataSource;
         this.options['columns'] = this.columns || this.options.columns;
         this.options['pageSize'] = this.options && this.options.pageSize ? this.options.pageSize : this.pageSize;
+        this.options['pageIndex'] = this.options && this.options.pageIndex ? this.options.pageIndex : this.pageIndex;
         this.options['loadOnInit'] = this.options && this.options.loadOnInit != undefined ? this.options.loadOnInit : this.loadOnInit;
         this.options['loadMethod'] = this.options && this.options.loadMethod ? this.options.loadMethod : this.loadMethod;
         this.options['loadMethodValues'] = this.options && this.options.loadMethodValues ? this.options.loadMethodValues : this.loadMethodValues;
@@ -406,6 +407,18 @@ export class GridExtendedComponent {
             this.tableDataSource.data = await this.options.loadMethod(loadMethodValues);
         this.tableDataSource.sort = this.matSort;
         this.tableDataSource.paginator = this.paginator;
+        setTimeout(()=>{
+            this.tableDataSource.paginator?.firstPage();
+            if(this.tableDataSource.paginator){
+                let contador:number = this.pageIndex;
+                while(contador > 0){
+                    this.tableDataSource.paginator.nextPage();
+                    contador--;
+                }
+            }
+        }, 500);
+        
+        
 
         this.detector.detectChanges();
 

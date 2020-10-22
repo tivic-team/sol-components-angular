@@ -1,6 +1,6 @@
 import { DateAdapter } from '@angular/material/core';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import * as moment from 'moment';
+import moment from 'moment';
 import { FormControl } from '@angular/forms';
 
 @Component({
