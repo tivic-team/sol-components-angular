@@ -46,7 +46,7 @@ import { DialogFactory } from "sol-tools-ts/dist/dialog/dialog-factory";
                             <mat-checkbox (change)="selectAll($event);" *ngIf="selectionMode == 'multiple'"
                                 [checked]="selection.hasValue() && isAllSelected()"
                                 [disabled]="options.disabled"
-                                [indeterminate]="selection.hasValue() && !rsm.isAllSelected()"></mat-checkbox>
+                                [indeterminate]="selection.hasValue()"></mat-checkbox>
                         </mat-header-cell>
                         <mat-cell *matCellDef="let register" style="width:60px; min-width: 60px;max-width: 60px">
                             <mat-checkbox (click)="$event.stopPropagation()"
