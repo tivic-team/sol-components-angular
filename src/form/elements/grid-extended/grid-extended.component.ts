@@ -24,38 +24,8 @@ import { DialogFactory } from "sol-tools-ts/dist/dialog/dialog-factory";
     <div fxLayout="column" fxFlex>
         <div #element fxLayout="column" fxFlex>
             <mat-label *ngIf="title">{{title}}</mat-label>
-            <div class="grid-toolbar" fxLayoutAlign="start center" [fxShow]="selection.selected.length > 0 && (selectionMode == 'single' || selectionMode == 'multiple')">
-                <span>{{selection.selected.length}} selecionado(s)</span>
-                <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="selectionMode == 'multiple'">
-                    <mat-icon>arrow_drop_down</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu" yPosition="below" xPosition="after">
-                    <button mat-menu-item (click)="selectAll($event)">Marcar todos
-                        tudo</button>
-                    <button mat-menu-item (click)="selection.clear()">Desmarcar todos</button>
-                </mat-menu>
-                <span fxFlex></span>
-                <button mat-icon-button (click)="rowRemoveEvent.emit(selection.selected)">
-                    <mat-icon>delete</mat-icon>
-                </button>
-            </div>
             <ng-container>
                 <mat-table matSort #table [dataSource]="tableDataSource">
-                    <ng-container matColumnDef="select">
-                        <mat-header-cell *matHeaderCellDef style="width:60px; min-width: 60px;max-width: 60px">
-                            <mat-checkbox (change)="selectAll($event);" *ngIf="selectionMode == 'multiple'"
-                                [checked]="selection.hasValue() && isAllSelected()"
-                                [disabled]="options.disabled"
-                                [indeterminate]="selection.hasValue()"></mat-checkbox>
-                        </mat-header-cell>
-                        <mat-cell *matCellDef="let register" style="width:60px; min-width: 60px;max-width: 60px">
-                            <mat-checkbox (click)="$event.stopPropagation()"
-                                [disabled]="options.disabled"
-                                (change)="$event.register = register;gridCheckBoxChange($event, register); checkboxChange.emit($event);"
-                                [checked]="selection.isSelected(register)"></mat-checkbox>
-                                
-                        </mat-cell>
-                    </ng-container>
                     <ng-container *ngFor="let column of options.columns; let i = index">
                         <ng-container *ngIf="!column.type || column.type == 'label'" [matColumnDef]="column.dataField">
                             <mat-header-cell *matHeaderCellDef [ngStyle]="{'max-width': column.width}" mat-sort-header>
@@ -79,7 +49,7 @@ import { DialogFactory } from "sol-tools-ts/dist/dialog/dialog-factory";
                             </mat-header-cell>
                             <mat-cell *matCellDef="let register" [ngStyle]="{'max-width': column.width}">
                                 <mat-checkbox (click)="$event.stopPropagation()"
-                                    (change)="fieldCheckBoxChange($event, register, column.dataField)"
+                                    (change)="fieldCheckBoxChange($event, register, column)"
                                     [disabled]="options.disabled"
                                     [checked]="fieldCheckSelected(register, column.dataField)"></mat-checkbox>
                             </mat-cell>
@@ -354,9 +324,6 @@ export class GridExtendedComponent {
         this.options['allowRowClickGrid'] = this.options && this.options.allowRowClickGrid ? this.options.allowRowClickGrid : this.allowRowClickGrid;
         this.options['messageAllowRowClickGrid'] = this.options && this.options.messageAllowRowClickGrid ? this.options.messageAllowRowClickGrid : this.messageAllowRowClickGrid;
 
-        if (this.options.selectionMode !== 'none')
-            this.displayedColumns.push('select');
-
         if (this.options && this.options.columns) {
             for (let i = 0; i < this.options.columns.length; i++) {
                 this.displayedColumns.push(this.options.columns[i].dataField);
@@ -467,9 +434,7 @@ export class GridExtendedComponent {
     }
 
     public selectAll($event: MatCheckboxChange) {
-        this.isAllSelected() ?
-        this.selection.clear() :
-        this.tableDataSource.data.forEach(row => this.selection.select(row));
+        this.isAllSelected() ? this.selection.clear() : this.tableDataSource.data.forEach(row => this.selection.select(row));
     }
 
     public getSelected() {
@@ -648,12 +613,15 @@ export class GridExtendedComponent {
         });
     }
 
-    public fieldCheckBoxChange($event:any, register:any, dataField:any){
-        register[dataField] = $event.checked ? 1 : 0;
+    public fieldCheckBoxChange($event:any, register:any, column:any){
+        register[column.dataField] = $event.checked ? 1 : 0;
+        if(column.onCheck){
+            column.onCheck(register, $event.checked);
+        }
     }
 
     public fieldCheckSelected(register:any, dataField:any){
-        return register[dataField] == 1;
+        return register[dataField];
     }
 
     public changeText($event:any, register:any, dataField:any){
