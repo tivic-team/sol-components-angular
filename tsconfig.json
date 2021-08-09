@@ -1,22 +1,36 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
-    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
-    "outDir": "./dist",                        /* Redirect output structure to the directory. */
-    "strict": true,                           /* Enable all strict type-checking options. */
-    "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
-    "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
-    "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
-    "skipLibCheck": true,                     /* Skip type checking of declaration files. */
-    "strictPropertyInitialization": false,
-    "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "paths": {
+      "sol-lib": [
+        "dist/sol-lib/sol-lib",
+        "dist/sol-lib"
+      ]
+    },
+    "target": "es2017",
+    "module": "es2020",
     "lib": [
       "es2018",
       "dom"
     ]
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": ["node_modules"]
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }
