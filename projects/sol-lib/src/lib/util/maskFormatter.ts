@@ -7,7 +7,7 @@ const PHONE = "(00) 0000-0000";
 const CELLPHONE = "(00) 00000-0000";
 const LICENSEPLATE = "SSS0A00";
 const CEP = "00000-000";
-const UNMASKED = "A{200}";
+const UNMASKED = "unmasked";
  
 export default function getMaskFormat(maskFormat: string){
     let mask = '';

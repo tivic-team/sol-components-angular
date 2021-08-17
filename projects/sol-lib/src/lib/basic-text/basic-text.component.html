@@ -2,7 +2,8 @@
 
 <mat-form-field class="basic-full-width" appearance="outline">
   <mat-label>{{ title }}</mat-label>
-  <input matInput #input (keyup)="onChange($event, input.value)" [mask]="maskFormat">
+  <input matInput #input (keyup)="onChange($event, input.value)" *ngIf="maskFormat === 'unmasked'">
+  <input matInput #input (keyup)="onChange($event, input.value)" [mask]="maskFormat" *ngIf="maskFormat !== 'unmasked'">
   <mat-icon class="icon-form-left" matSuffix *ngIf="icon && iconPosition === 'end'">{{ icon }}</mat-icon>
   <mat-icon class="icon-form-right" matPrefix *ngIf="icon && iconPosition === 'start'"> {{ icon }}</mat-icon>
 </mat-form-field>
