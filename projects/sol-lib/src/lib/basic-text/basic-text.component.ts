@@ -44,7 +44,7 @@ export class BasicTextComponent implements OnInit, ControlValueAccessor, OnChang
     this._value = value;
     this.propagateChange(value);
     this.changes.emit(value);
-}
+  }
 
   ngOnChanges() {
     
