@@ -1,7 +1,10 @@
-<form action="/action_page.php">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
-  </form>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-form-field class="basic-full-width" appearance="outline">
+  <mat-label>{{ title }}</mat-label>
+  <input matInput #input (keyup)="onChange($event, input.value)" *ngIf="maskFormat === 'unmasked'">
+  <input matInput #input (keyup)="onChange($event, input.value)" [mask]="maskFormat" *ngIf="maskFormat !== 'unmasked'">
+  <mat-icon class="icon-form-left" matSuffix *ngIf="icon && iconPosition === 'end'">{{ icon }}</mat-icon>
+  <mat-icon class="icon-form-right" matPrefix *ngIf="icon && iconPosition === 'start'"> {{ icon }}</mat-icon>
+</mat-form-field>
+<br/>

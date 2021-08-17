@@ -11,6 +11,9 @@
 /node_modules
 /projects/sol-lib/node_modules
 
+# tests env
+/projects/sol-lib-testing
+
 # profiling files
 chrome-profiler-events*.json
 
