@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { SolLibComponent } from './sol-lib.component';
 import { MatInputModule } from '@angular/material/input';
 import { BasicTextModule } from './basic-text/basic-text.module';
-import { BasicTextComponent } from './basic-text/basic-text.component';
 import { MatIconModule } from '@angular/material/icon';
+import { BasicDropdownModule } from './basic-dropdown/basic-dropdown.module';
 
 
 @NgModule({
@@ -13,11 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     MatInputModule,
     BasicTextModule,
+    BasicDropdownModule,
     MatIconModule
   ],
   exports: [
     SolLibComponent,
-    BasicTextComponent
+    BasicDropdownModule,
+    BasicTextModule
   ]
 })
 export class SolLibModule { }
