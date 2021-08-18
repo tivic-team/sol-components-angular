@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BasicCheckboxComponent } from './basic-checkbox.component';
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -11,11 +12,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
   ],
   imports: [
     CommonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule
   ],
   exports: [
     BasicCheckboxComponent,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule
   ]
 })
 export class BasicCheckboxModule { }

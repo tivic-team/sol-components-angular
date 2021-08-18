@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
@@ -30,7 +30,7 @@ export class BasicCheckboxComponent implements OnInit, ControlValueAccessor, OnC
 
   onChange(e:MatCheckboxChange){
     this._value = e;
-    this.propagateChange(e);
+    this.propagateChange(e.checked);
     this.changes.emit(e);
   }
 
