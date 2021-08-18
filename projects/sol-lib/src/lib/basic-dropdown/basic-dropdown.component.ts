@@ -1,6 +1,7 @@
 import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
+import { DataField } from '../models/DataField';
 
 @Component({
   selector: 'sol-basic-dropdown',
@@ -17,18 +18,18 @@ export class BasicDropdownComponent implements OnInit, ControlValueAccessor, OnC
   private _value: any;
 
   @Input() title: string;
-  @Input() dataList: Array<any>;
   @Input() selected: any;
-
+  @Input() dataList:DataField;
 
   @Output() changes: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { 
     this.title = '';
-    this.dataList = [];
+    this.dataList = new DataField([]);
   }
-
+  
   ngOnInit(): void {
+    
   }
 
   onChange(e:MatSelectChange){
