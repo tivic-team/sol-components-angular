@@ -14,7 +14,6 @@ import { NgxMaskModule } from 'ngx-mask';
   imports: [
     CommonModule,
     MatInputModule,
-    MatFormFieldModule,
     MatIconModule,
     NgxMaskModule.forRoot(),
     NgxMaskModule.forChild()
@@ -23,7 +22,6 @@ import { NgxMaskModule } from 'ngx-mask';
   exports: [
     BasicTextComponent,
     MatInputModule,
-    MatFormFieldModule,
     MatIconModule
   ]
 })

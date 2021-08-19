@@ -5,6 +5,8 @@ import { BasicTextModule } from './basic-text/basic-text.module';
 import { MatIconModule } from '@angular/material/icon';
 import { BasicDropdownModule } from './basic-dropdown/basic-dropdown.module';
 import { BasicCheckboxModule } from './basic-checkbox/basic-checkbox.module';
+import { BasicAutocompleteModule } from './basic-autocomplete/basic-autocomplete.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -13,16 +15,21 @@ import { BasicCheckboxModule } from './basic-checkbox/basic-checkbox.module';
   ],
   imports: [
     MatInputModule,
+    BasicAutocompleteModule,
     BasicCheckboxModule,
     BasicDropdownModule,
     BasicTextModule,
+    MatFormFieldModule,
     MatIconModule
   ],
   exports: [
     SolLibComponent,
+    BasicAutocompleteModule,
     BasicCheckboxModule,
     BasicDropdownModule,
-    BasicTextModule
+    BasicTextModule,
+    MatFormFieldModule
   ]
 })
+
 export class SolLibModule { }
