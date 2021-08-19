@@ -30,7 +30,7 @@ export class BasicCheckboxComponent implements OnInit, ControlValueAccessor, OnC
 
   onChange(e:MatCheckboxChange){
     this._value = e;
-    this.propagateChange(e.checked);
+    this.propagateChange(+e.checked);
     this.changes.emit(e);
   }
 
