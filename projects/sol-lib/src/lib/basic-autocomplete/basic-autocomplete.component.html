@@ -1,9 +1,13 @@
 <mat-form-field appearance="fill">
-    <mat-label>Assignee</mat-label>
-    <input type="text" matInput [matAutocomplete]="auto"  #input (keyup)="onChange($event, input.value)">
-    <mat-autocomplete #auto="matAutocomplete">
+  <mat-label>{{title}}</mat-label>
+  <input type="text"
+         placeholder={{placeholder}}
+         matInput
+         [formControl]="filterControl"
+         [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onChange($event)" [displayWith]="displayFn">
     <mat-option *ngFor="let option of filteredOptions" [value]="option">
-        {{option.name}}
+      {{option.label}}
     </mat-option>
-    </mat-autocomplete>
+  </mat-autocomplete>
 </mat-form-field>

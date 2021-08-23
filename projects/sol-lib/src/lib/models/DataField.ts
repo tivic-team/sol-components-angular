@@ -17,9 +17,7 @@ export class DataField implements IData{
         });
     }
 
-    public getData(){
+    public getData():  Array<{cd: string, label: string}> {
         return this._dataList;
     }
-
-    
 }
