@@ -19,7 +19,7 @@ export class BasicDropdownComponent implements OnInit, ControlValueAccessor, OnC
 
   @Input() title: string;
   @Input() selected: any;
-  @Input() dataList:DataField;
+  @Input() dataList: DataField;
 
   @Output() changes: EventEmitter<any> = new EventEmitter<any>();
 
