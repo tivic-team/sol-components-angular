@@ -7,6 +7,7 @@ import { BasicDropdownModule } from './basic-dropdown/basic-dropdown.module';
 import { BasicCheckboxModule } from './basic-checkbox/basic-checkbox.module';
 import { BasicAutocompleteModule } from './basic-autocomplete/basic-autocomplete.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BasicButtonModule } from './basic-button/basic-button.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   exports: [
     SolLibComponent,
     BasicAutocompleteModule,
+    BasicButtonModule,
     BasicCheckboxModule,
     BasicDropdownModule,
     BasicTextModule,
