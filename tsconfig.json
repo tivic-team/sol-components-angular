@@ -15,12 +15,12 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "sol-lib": [
-        "dist/sol-lib/sol-lib",
-        "dist/sol-lib"
+      "sol-components-angular": [
+        "dist/sol-components-angular/sol-components-angular",
+        "dist/sol-components-angular"
       ]
     },
-    "target": "es2017",
+    "target": "es2015",
     "module": "es2020",
     "lib": [
       "es2018",

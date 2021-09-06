@@ -9,13 +9,10 @@
 
 # dependencies
 /node_modules
-/projects/sol-lib/node_modules
-
-# tests env
-/projects/sol-lib-testing
 
 # profiling files
 chrome-profiler-events*.json
+speed-measure-plugin*.json
 
 # IDEs and editors
 /.idea
@@ -47,6 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-#Test Environment
-/projects/sol-lib-tester
