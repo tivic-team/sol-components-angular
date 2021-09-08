@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxMaskModule } from 'ngx-mask';
+import { BasicButtonComponent } from './basic-button/basic-button.component';
 
 
 
@@ -21,6 +22,7 @@ import { NgxMaskModule } from 'ngx-mask';
     BasicAutocompleteComponent,
     BasicCheckboxComponent,
     BasicDropdownComponent,
+    BasicButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +41,7 @@ import { NgxMaskModule } from 'ngx-mask';
     BasicAutocompleteComponent,
     BasicCheckboxComponent,
     BasicDropdownComponent,
+    BasicButtonComponent,
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,

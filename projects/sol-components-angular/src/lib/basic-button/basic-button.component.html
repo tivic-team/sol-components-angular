@@ -1,0 +1,14 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div>
+    <button mat-button color={{btn_color}} *ngIf="btn_type === 'basic'">
+        <mat-icon class="icon-form-right" matPrefix *ngIf="icon && iconPosition === 'start'"> {{ icon }}</mat-icon>
+        {{title}}
+        <mat-icon class="icon-form-left" matSuffix *ngIf="icon && iconPosition === 'end'">{{ icon }}</mat-icon>
+    </button>  
+    <button mat-raised-button color={{btn_color}} *ngIf="btn_type === 'raised'">
+        <mat-icon class="icon-form-right" matPrefix *ngIf="icon && iconPosition === 'start'"> {{ icon }}</mat-icon>
+        {{title}}
+        <mat-icon class="icon-form-left" matSuffix *ngIf="icon && iconPosition === 'end'">{{ icon }}</mat-icon>
+    </button>  
+</div> 
