@@ -3,5 +3,16 @@
   "dest": "../../dist/sol-components-angular",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },  
+  "allowedNonPeerDependencies": [
+    "@angular/animations",
+    "@angular/cdk",
+    "@angular/material",
+    "@angular/common",
+    "@angular/core",
+    "@angular/forms",
+    "@angular/platform-browser",
+    "ngx-mask",
+    "rxjs"
+  ]
 }

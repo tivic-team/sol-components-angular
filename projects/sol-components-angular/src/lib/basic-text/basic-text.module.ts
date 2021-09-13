@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasicDropdownComponent } from './basic-dropdown.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { BasicTextComponent } from './basic-text.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
-    BasicDropdownComponent
+    BasicTextComponent
+  ],
+  entryComponents: [
+    BasicTextComponent
   ],
   imports: [
     CommonModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatInputModule,
+    MatFormFieldModule,
   ],
   exports: [
-    BasicDropdownComponent,
     MatSelectModule
   ]
 })
-export class BasicDropdownModule { }
+export class BasicTextModule { }
