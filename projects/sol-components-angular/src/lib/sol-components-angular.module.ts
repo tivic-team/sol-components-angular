@@ -13,6 +13,7 @@ import { BasicAutocompleteModule } from './basic-autocomplete/basic-autocomplete
 import { BasicButtonModule } from './basic-button/basic-button.module';
 import { BasicTextModule } from './basic-text/basic-text.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { BasicTableModule } from './basic-table/basic-table.module';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -39,6 +40,7 @@ const maskConfig: Partial<IConfig> = {
     BasicAutocompleteModule,
     BasicButtonModule,
     BasicTextModule,
+    BasicTableModule,
 
     NgxMaskModule.forRoot(maskConfig)
   ],
@@ -47,7 +49,8 @@ const maskConfig: Partial<IConfig> = {
     BasicCheckboxModule,
     BasicAutocompleteModule,
     BasicButtonModule,
-    BasicTextModule
+    BasicTextModule,
+    BasicTableModule
   ]
 })
 export class SolComponentsAngularModule { }
