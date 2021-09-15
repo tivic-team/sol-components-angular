@@ -14,6 +14,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "strictPropertyInitialization": false,
     "paths": {
       "sol-components-angular": [
         "dist/sol-components-angular/sol-components-angular",
