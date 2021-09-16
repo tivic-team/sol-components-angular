@@ -1,0 +1,30 @@
+:host{
+    
+    .container{
+        height: 400px;
+        overflow: auto;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    .no-row {
+        position: relative;
+        padding: 15px;
+        text-align: center;
+        min-width: 100%;
+        box-sizing: border-box;
+        font-size: 0.85em;
+        height: 400px;
+    }
+
+    .mat-row .mat-cell {
+        cursor: pointer;
+    }
+
+    .mat-row:hover .mat-cell {
+        background-color: rgb(223, 215, 215);
+    }
+
+}

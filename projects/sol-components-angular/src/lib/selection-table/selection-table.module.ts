@@ -1,27 +1,34 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasicTableComponent } from './basic-table.component';
+import { SelectionTableComponent } from './selection-table.component';
 import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BasicPaginatorModule } from '../basic-paginator/basic-paginator.module';
 
 
 
 @NgModule({
   declarations: [
-    BasicTableComponent
+    SelectionTableComponent
   ],
   imports: [
     CommonModule,
     MatSortModule,
+    MatPaginatorModule,
     MatTableModule,
-    BasicPaginatorModule,
+    MatCheckboxModule,
+    BasicPaginatorModule
   ],
   exports: [
-    BasicTableComponent,
+    CommonModule,
     MatSortModule,
+    MatPaginatorModule,
     MatTableModule,
+    MatCheckboxModule,
+    SelectionTableComponent,
     BasicPaginatorModule
   ]
 })
-export class BasicTableModule { }
+export class SelectionTableModule { }

@@ -14,6 +14,9 @@ import { BasicButtonModule } from './basic-button/basic-button.module';
 import { BasicTextModule } from './basic-text/basic-text.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { BasicTableModule } from './basic-table/basic-table.module';
+import { SelectionTableModule } from './selection-table/selection-table.module';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatPaginatorPT } from './util/MatPaginatorIntl';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -22,7 +25,7 @@ const maskConfig: Partial<IConfig> = {
 
 
 @NgModule({
-  declarations: [//TODO Remover components e importar modulos
+  declarations: [
   ],
   imports: [
     CommonModule,
@@ -41,8 +44,12 @@ const maskConfig: Partial<IConfig> = {
     BasicButtonModule,
     BasicTextModule,
     BasicTableModule,
+    SelectionTableModule,
 
     NgxMaskModule.forRoot(maskConfig)
+  ],
+  providers: [
+    [{ provide: MatPaginatorIntl, useClass: MatPaginatorPT}]
   ],
   exports: [
     BasicDropdownModule,
@@ -50,7 +57,8 @@ const maskConfig: Partial<IConfig> = {
     BasicAutocompleteModule,
     BasicButtonModule,
     BasicTextModule,
-    BasicTableModule
+    BasicTableModule,
+    SelectionTableModule
   ]
 })
 export class SolComponentsAngularModule { }
