@@ -1,6 +1,6 @@
 {
   "name": "sol-components-angular",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "peerDependencies": {
     "@angular/common": "^11.2.14",
     "@angular/core": "^11.2.14",

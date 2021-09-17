@@ -17,6 +17,7 @@ import { BasicTableModule } from './basic-table/basic-table.module';
 import { SelectionTableModule } from './selection-table/selection-table.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatPaginatorPT } from './util/MatPaginatorIntl';
+import { MultipleTableModule } from '../public-api';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -45,6 +46,7 @@ const maskConfig: Partial<IConfig> = {
     BasicTextModule,
     BasicTableModule,
     SelectionTableModule,
+    MultipleTableModule,
 
     NgxMaskModule.forRoot(maskConfig)
   ],
@@ -58,7 +60,8 @@ const maskConfig: Partial<IConfig> = {
     BasicButtonModule,
     BasicTextModule,
     BasicTableModule,
-    SelectionTableModule
+    SelectionTableModule,
+    MultipleTableModule
   ]
 })
 export class SolComponentsAngularModule { }
