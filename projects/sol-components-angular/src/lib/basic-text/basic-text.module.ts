@@ -19,7 +19,8 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
   ],
   exports: [
-    MatSelectModule
+    MatSelectModule,
+    BasicTextComponent
   ]
 })
 export class BasicTextModule { }
