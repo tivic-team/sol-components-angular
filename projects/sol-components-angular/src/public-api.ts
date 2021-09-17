@@ -10,6 +10,7 @@ export * from './lib/basic-button/basic-button.component';
 export * from './lib/basic-dropdown/basic-dropdown.component';
 export * from './lib/basic-table/basic-table.component';
 export * from './lib/selection-table/selection-table.component';
+export * from './lib/multiple-table/multiple-table.component';
 export * from './lib/basic-paginator/basic-paginator.component';
 
 export * from './lib/basic-checkbox/basic-checkbox.module';
@@ -19,6 +20,7 @@ export * from './lib/basic-button/basic-button.module';
 export * from './lib/basic-dropdown/basic-dropdown.module';
 export * from './lib/basic-table/basic-table.module';
 export * from './lib/selection-table/selection-table.module';
+export * from './lib/multiple-table/multiple-table.module';
 export * from './lib/basic-paginator/basic-paginator.module';
 
 export * from './lib/models/TableColumn';
