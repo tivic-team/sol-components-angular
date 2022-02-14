@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "../../out-tsc/lib",
+    "target": "es2015",
+    "skipLibCheck": false,
+    "declaration": false,
+    "declarationMap": true,
+    "inlineSources": true,
+    "strictPropertyInitialization": false,
+    "types": [],
+    "lib": [
+      "dom",
+      "es2018"
+    ],
+    "paths": {
+      "ngx-mask/*": ["../node_modules/ngx-mask/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true,
+  },
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+}
